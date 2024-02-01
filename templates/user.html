@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form name='registration' method="post" action="../insertuser/" enctype="multipart/form-data">
+        {% csrf_token %}
+        <pre>
+        UID: <input type="text" name="ID" value="" width="200"><br>
+        Name: <input type="text" name="name" value="" width="200"><br>
+        Email: <input type="text" name="email" value="" width="200"><br>
+        Branch: <input type="text" name="branch" value="" width="200"><br>
+        Image: <input type="file" name="image" accept="image/*"><br>
+        <input type="submit" name="reg" value="register" width="200" height="200">
+        </pre>
+    </form>
+</body>
+</html>

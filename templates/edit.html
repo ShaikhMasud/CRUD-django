@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form name='registration' method="post" action="/update/{{user.uid}}" enctype="multipart/form-data">
+        {% csrf_token %}
+        <pre>
+        UID : <input type="text" name="ID" value="{{user.uid}}" width="200"><br>
+        Name : <input type="text" name="name" value="{{user.name}}" width="200"><br>
+        Email : <input type="text" name="email" value="{{user.email}}" width="200"><br>
+        Branch : <input type="text" name="branch" value="{{user.branch}}" width="200"><br>
+    
+        {% if user.image %}
+            Current Image: <img src="{{ user.image.url }}" alt="Current Image" style="max-width: 100px; max-height: 100px;"><br>
+            Remove Image: <input type="checkbox" name="remove_image"> Check to remove the current image<br>
+        {% endif %}
+    
+        Image : <input type="file" name="image" accept="image/*"><br>
+        <input type="submit" name="update" value="update" width="200" height="200">
+        </pre>
+    </form>
+    
+</body>
+</html>

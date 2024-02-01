@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User List</title>
+</head>
+<body>
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Branch</th>
+            <th>Image</th>
+            <th>Delete</th>
+            <th>Edit</th>
+        </tr>
+        {% for user in users %}
+        <tr>
+            <td>{{ user.uid }}</td>
+            <td>{{ user.name }}</td>
+            <td>{{ user.email }}</td>
+            <td>{{ user.branch }}</td>
+            <td>
+                {% if user.image %}
+                    <img src="{{ user.image.url }}" alt="User Image" style="max-width: 100px; max-height: 100px;">
+                {% else %}
+                    No Image
+                {% endif %}
+            </td>
+            
+            <td><a href="/delete/{{ user.uid }}">delete</a></td>
+            <td><a href="/edit/{{ user.uid }}">edit</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
