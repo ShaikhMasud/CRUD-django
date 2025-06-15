@@ -1,0 +1,1 @@
+This is a simple project demonstrating **CRUD (Create, Read, Update, Delete)** operations using the **Django web framework** and a **MySQL database**. This project was created to understand how Django handles models, views, and database operations.
